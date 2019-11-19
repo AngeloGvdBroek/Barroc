@@ -47,6 +47,12 @@
                 top: 20px;
             }
 
+            .top-left {
+                position: absolute;
+                left: 10px;
+                top: 18px;
+            }
+
             .content {
                 text-align: center;
             }
@@ -64,6 +70,11 @@
                 text-decoration: none;
                 text-transform: uppercase;
             }
+            .header{
+                border-bottom: dimgray 1px solid;
+
+            }
+            
 
             .m-b-md {
                 margin-bottom: 30px;
@@ -74,6 +85,7 @@
             .content{ padding-top: 200px}
         </style>
     </head>
+    <body>
     <header>
 
         <div class="flex-center position-ref full-height">
