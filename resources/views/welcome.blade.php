@@ -19,6 +19,7 @@
                 height: 100vh;
                 margin: 0;
             }
+            body{}
 
             .full-height {
                 height: 100vh;
@@ -38,6 +39,12 @@
                 position: absolute;
                 right: 10px;
                 top: 18px;
+
+            }
+            .top-left {
+                position: absolute;
+                left: 10px;
+                top: 20px;
             }
 
             .content {
@@ -61,11 +68,20 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+            header{
+                height: 60px;
+            border-bottom: dimgrey 1px solid}
+            .content{ padding-top: 200px}
         </style>
     </head>
-    <body>
+    <header>
+
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
+                <div class="top-left links">
+                    <a href=""><img src="{{ asset('img/logo.png') }}" alt="test"></a>
+                </div>
+
                 <div class="top-right links">
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
@@ -77,23 +93,20 @@
                         @endif
                     @endauth
                 </div>
-            @endif
+        @endif
+
+        </div>
+
+    </header>
+    <body>
 
             <div class="content">
+                <div class="content 1">
                 <div class="title m-b-md">
-                    Laravel
+                    Barroc
                 </div>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
+
             </div>
         </div>
     </body>
