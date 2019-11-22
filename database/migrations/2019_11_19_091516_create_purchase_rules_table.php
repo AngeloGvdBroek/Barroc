@@ -17,6 +17,8 @@ class CreatePurchaseRulesTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('purchase_id');
             $table->unsignedBigInteger('supply_id');
+            $table->text('description');
+
             $table->timestamps();
 
             $table->foreign('purchase_id')

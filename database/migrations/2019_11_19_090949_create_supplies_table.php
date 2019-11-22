@@ -15,6 +15,7 @@ class CreateSuppliesTable extends Migration
     {
         Schema::create('supplies', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->text('price');
             $table->timestamps();
         });
     }

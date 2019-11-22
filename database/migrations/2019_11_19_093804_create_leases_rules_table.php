@@ -17,6 +17,9 @@ class CreateLeasesRulesTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('lease_id');
             $table->unsignedBigInteger('supply_id');
+            $table->text('description');
+            $table->text('expiration_date');
+            $table->text('amount');
             $table->timestamps();
 
             $table->foreign('lease_id')
