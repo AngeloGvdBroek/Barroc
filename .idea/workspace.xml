@@ -18,6 +18,7 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
   </component>
+<<<<<<< Updated upstream
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
@@ -40,12 +41,17 @@
       </file>
     </leaf>
   </component>
+<<<<<<< Updated upstream
   <component name="FindInProjectRecents">
     <findStrings>
       <find>top-r</find>
       <find>links</find>
     </findStrings>
   </component>
+=======
+=======
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -160,6 +166,21 @@
       <path value="$PROJECT_DIR$/vendor/laravel/ui" />
     </include_path>
   </component>
+<<<<<<< Updated upstream
+=======
+  <component name="ProjectConfigurationFiles">
+    <option name="files">
+      <list>
+        <option value="$PROJECT_DIR$/.idea/Barroc.iml" />
+        <option value="$PROJECT_DIR$/.idea/php.xml" />
+        <option value="$PROJECT_DIR$/.idea/misc.xml" />
+        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
+        <option value="$PROJECT_DIR$/.idea/modules.xml" />
+      </list>
+    </option>
+  </component>
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-10" />
     <option name="y" value="-10" />
@@ -201,17 +222,32 @@
       <pane id="Scope" />
     </panes>
   </component>
+=======
+  <component name="ProjectId" id="1TmWssysd4RyuaX34bIRaUX3QC9" />
+>>>>>>> Stashed changes
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+<<<<<<< Updated upstream
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+=======
+<<<<<<< Updated upstream
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views" />
+=======
+    <property name="last_opened_file_path" value="$USER_HOME$/Documents/Ferius/ferius_hiphop" />
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+<<<<<<< Updated upstream
       <recent name="D:\xampp\htdocs\Barroc_php\Barroc\resources\views" />
+=======
+      <recent name="C:\xampp\htdocs\barroc\Barroc" />
+>>>>>>> Stashed changes
       <recent name="D:\xampp\htdocs\Barroc_php\Barroc" />
     </key>
   </component>
@@ -243,9 +279,17 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1574064724645</updated>
+<<<<<<< Updated upstream
       <workItem from="1574064732527" duration="3823000" />
       <workItem from="1574078612781" duration="3342000" />
+<<<<<<< Updated upstream
       <workItem from="1574423433469" duration="1280000" />
+=======
+=======
+<<<<<<< Updated upstream
+      <workItem from="1574064732527" duration="3519000" />
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>
@@ -423,5 +467,28 @@
         </state>
       </provider>
     </entry>
+=======
+      <workItem from="1574064732527" duration="844000" />
+      <workItem from="1574065963737" duration="2506000" />
+      <workItem from="1574079491507" duration="654000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+>>>>>>> Stashed changes
   </component>
 </project>
