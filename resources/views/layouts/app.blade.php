@@ -23,8 +23,8 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body>
-    <div id="app">
+<body id="bootstrap-overwrite" background="img/coffeewallpaper.jpg">
+{{--    <div id="app">--}}
         <nav class="header-style navbar navbar-expand-md navbar-light">
             <div class="container">
 
@@ -74,9 +74,46 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="py-4 main-test">
             @yield('content')
         </main>
-    </div>
+{{--    </div>--}}
+    <footer>
+        <div class="adress-footer">
+            <ul>
+                <li>Barroc intens</li>
+                <li>Straatnaam 11</li>
+                <li>4824lm</li>
+            </ul>
+        </div>
+        <div class="Contact-details">
+            <ul>
+                <li>Barroc intens</li>
+                <li>Straatnaam 11</li>
+                <li>4824lm</li>
+            </ul>
+        </div>
+        <div class="Contact-details-logo">
+            <a href=""><img src="{{ asset('img/logo.png') }}" alt="test"></a>
+        </div>
+        <div class="Contact-details-times">
+            <ul>
+                <li>Monday till friday: 9am/5pm</li>
+                <li>Saturday: 10am/3pm</li>
+                <li>sunday: closed</li>
+
+            </ul>
+
+        </div>
+        <div class="Contact-details-social">
+            <ul class="contact-details-ul">
+                <li>Twitter</li>
+                <li>Facebook</li>
+                <li>Reddit</li>
+            </ul>
+        </div>
+
+    </footer>
 </body>
+
 </html>
