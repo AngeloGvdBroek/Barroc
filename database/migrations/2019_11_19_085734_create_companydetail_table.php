@@ -18,8 +18,8 @@ class CreateCompanydetailTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->text('company_name');
             $table->text('phonenumber');
-            $table->text('addres');
-            $table->text('postaddres');
+            $table->text('address');
+            $table->text('postaddress');
             $table->timestamps();
 
 
