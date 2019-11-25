@@ -18,6 +18,43 @@ class CreateRolesTable extends Migration
             $table->string('role');
             $table->timestamps();
         });
+
+        DB::table('roles')->insert(
+            array(
+                'id' => '1',
+                'role' => 'customer',
+            )
+        );
+        DB::table('roles')->insert(
+            array(
+                'id' => '2',
+                'role' => 'sale'
+            )
+        );
+        DB::table('roles')->insert(
+            array(
+                'id' => '3',
+                'role' => 'maintenance'
+            )
+        );
+        DB::table('roles')->insert(
+            array(
+                'id' => '4',
+                'role' => 'ceo'
+            )
+        );
+        DB::table('roles')->insert(
+            array(
+                'id' => '5',
+                'role' => 'finance'
+            )
+        );
+        DB::table('roles')->insert(
+            array(
+                'id' => '6',
+                'role' => 'purchase'
+            )
+        );
     }
 
     /**
