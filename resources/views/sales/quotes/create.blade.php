@@ -18,10 +18,10 @@
     	@csrf
 
     	<div class="form-group">
-			<label for="customerId">Customer ID</label>
+			<label for="customerId">Klant</label>
 			<select class="form-control" name="customerId" id="">
                 @foreach( $customers as $customer )
-                    <option value="{{ $customer->id }}"> {{ $customer->name }}</option>
+                    <option value="{{ $customer->id }}"> {{ $customer->company_name }}</option>
                 @endforeach
             </select>
 		</div>

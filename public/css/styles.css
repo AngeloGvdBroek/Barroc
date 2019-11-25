@@ -9,10 +9,12 @@ html, body {
 #bootstrap-overwrite{
     background-size: 100%;
     background-repeat: no-repeat;
-
-
-
 }
+
+.h2-small {
+    font-size: 1.3em;    
+}
+
 .main-test {
     height: 80vh;
 }

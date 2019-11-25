@@ -15,9 +15,9 @@ class QuoteController extends Controller
      */
     public function index()
     {
-        $quotes = Quote::paginate(5);
+        $quotes = Quote::paginate(15);
 
-        return view('quotes/index', ['quotes' => $quotes]);
+        return view('sales/quotes/index', ['quotes' => $quotes]);
     }
 
     /**
@@ -27,9 +27,9 @@ class QuoteController extends Controller
      */
     public function create()
     {
-        $customers = User::all();
+        $customers = \App\Customer::all();
 
-        return view('quotes/create', ['customers' => $customers]);
+        return view('sales/quotes/create', ['customers' => $customers]);
     }
 
     /**
@@ -59,7 +59,7 @@ class QuoteController extends Controller
         // When quote has been made, send message to finance so they can confirm this
         //\Mail::to( \Auth::user() )->send( new \App\Mail\QuoteMail('gebruikersnaam') );
 
-        //return ( new \App\Mail\QuoteMail('gebruikersnaam') )->render(); // Renderd mail in html
+        //return ( new \App\Mail\QuoteMail('gebruikersnaam') )->render(); // Renders the mail in HTML
 
         $id = $quote->id; // ID of quote
 
@@ -74,9 +74,10 @@ class QuoteController extends Controller
      */
     public function show(Quote $quote)
     {
-        $customer = \App\User::find($quote->customer_id)->name;
+        $user = \App\User::find($quote->customer_id);
+        $customer = \App\Customer::find($user->id);
 
-        return view('quotes/show', array('customer' => $customer, 'quote' => $quote) );
+        return view('sales/quotes/show', array('customer' => $customer, 'quote' => $quote) );
     }
 
     /**

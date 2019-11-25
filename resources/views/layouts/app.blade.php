@@ -23,7 +23,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body id="bootstrap-overwrite" background="img/coffeewallpaper.jpg">
+<body id="bootstrap-overwrite">
 {{--    <div id="app">--}}
         <nav class="header-style navbar navbar-expand-md navbar-light">
             <div class="container">
