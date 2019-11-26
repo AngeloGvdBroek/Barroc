@@ -22,3 +22,4 @@ Route::get('/sales', 'SalesController@dashboard')->name('sales');
 
 Route::resource('quotes', 'QuoteController');
 Route::resource('customers', 'CustomerController');
+
