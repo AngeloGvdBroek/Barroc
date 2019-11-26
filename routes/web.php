@@ -20,6 +20,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/sales', 'SalesController@dashboard')->name('sales');
 
+Route::get('/register', function (){return 'ik mag hier komen...';})->middleware('auth','role:3');
+
 Route::resource('quotes', 'QuoteController');
 Route::resource('customers', 'CustomerController');
 
