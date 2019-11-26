@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateLeasesRulesTable extends Migration
+class CreateLeaseRulesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,10 @@ class CreateLeasesRulesTable extends Migration
      */
     public function up()
     {
-        Schema::create('leases_rules', function (Blueprint $table) {
+        Schema::create('lease_rules', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('lease_id');
             $table->unsignedBigInteger('supply_id');
-            $table->text('description');
-            $table->text('expiration_date');
-            $table->text('amount');
             $table->timestamps();
 
             $table->foreign('lease_id')
@@ -40,6 +37,6 @@ class CreateLeasesRulesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('leases_rules');
+        Schema::dropIfExists('lease_rules');
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateLeasesTypeTable extends Migration
+class CreateSuppliesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,12 @@ class CreateLeasesTypeTable extends Migration
      */
     public function up()
     {
-        Schema::create('leases_type', function (Blueprint $table) {
+        Schema::create('supplies', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('type');
+            $table->string('name');
+            $table->integer('in_stock');
+            $table->string('ean_nr');
+            $table->decimal('price_per_unit');
             $table->timestamps();
         });
     }
@@ -27,6 +30,6 @@ class CreateLeasesTypeTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('leases_type');
+        Schema::dropIfExists('supplies');
     }
 }

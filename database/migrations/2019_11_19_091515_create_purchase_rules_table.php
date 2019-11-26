@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateInvoicesTable extends Migration
+class CreatePurchaseRulesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,19 @@ class CreateInvoicesTable extends Migration
      */
     public function up()
     {
-        Schema::create('invoices', function (Blueprint $table) {
+        Schema::create('purchase_rules', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('lease_id');
-
+            $table->unsignedBigInteger('purchase_id');
+            $table->unsignedBigInteger('supply_id');
             $table->timestamps();
-            $table->text('description');
-            $table->text('quantity');
 
-            $table->foreign('lease_id')
+            $table->foreign('purchase_id')
                 ->references('id')
-                ->on('leases');
+                ->on('purchases');
+
+            $table->foreign('supply_id')
+                ->references('id')
+                ->on('supplies');
         });
     }
 
@@ -34,6 +36,6 @@ class CreateInvoicesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('invoices');
+        Schema::dropIfExists('purchase_rules');
     }
 }

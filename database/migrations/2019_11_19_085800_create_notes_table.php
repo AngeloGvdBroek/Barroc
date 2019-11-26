@@ -17,16 +17,18 @@ class CreateNotesTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('sales_id');
             $table->unsignedBigInteger('customer_id');
-            $table->text('note');
+
             $table->timestamps();
 
             $table->foreign('sales_id')
                 ->references('id')
                 ->on('users');
 
+
             $table->foreign('customer_id')
                 ->references('id')
                 ->on('users');
+
         });
     }
 

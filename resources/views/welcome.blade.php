@@ -16,9 +16,11 @@
     <header>
 
         <div class="flex-center position-ref full-height">
+            
             @if (Route::has('login'))
                 <div class="top-left links">
                     <a href=""><img src="{{ asset('img/logo.png') }}" alt="test"></a>
+                    <a href="" style="vertical-align: top">welkome</a>
                 </div>
 
                 <div class="top-right links">
