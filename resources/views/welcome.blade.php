@@ -20,7 +20,7 @@
             @if (Route::has('login'))
                 <div class="top-left links">
                     <a href=""><img src="{{ asset('img/logo.png') }}" alt="test"></a>
-                    <a href="" style="vertical-align: top">welkome</a>
+                    <a href="{{ url('/productpage') }}" style="vertical-align: top">producten</a>
                 </div>
 
                 <div class="top-right links">
@@ -64,11 +64,12 @@
             <div class="content">
                 <div class="content4" style="background-image: url({{"img/coffeewallpaper2.jpg"}});">
                     <div class="title m-b-md">
-                        DIT IS DE SLOGAN
+
+                        INTENSE COFFIE
                     </div>
                     <div class="content5">
                         <div class="title m-b-md">
-                            VAN BARROC INTENSE
+                            BARROC INTENSE
                         </div>
 
                     </div>
@@ -86,10 +87,9 @@
     </ul>
 </div>
     <div class="Contact-details">
+        <br>
     <ul>
-        <li>Barroc intens</li>
-        <li>Straatnaam 11</li>
-        <li>4824lm</li>
+        <a href="{{url('\contactformulier ')}}" class="button">offerte aanvragen? <mark class="barroc_yellow">klik hier</mark></a>
     </ul>
     </div>
     <div class="Contact-details-logo">

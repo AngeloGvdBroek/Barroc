@@ -202,3 +202,16 @@ footer ul li{
 .spacing{
     padding-right: 20px;
 }
+.button {
+    text-decoration: none;
+    background-color: #212121;
+    color: white;
+    padding: 20px 10px 20px 10px;
+    border: 10px none;
+    border-radius: 8px;
+
+}
+.barroc_yellow{
+    color: #ffd700;
+    background: none;
+}

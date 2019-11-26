@@ -19,6 +19,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/sales', 'SalesController@dashboard')->name('sales');
+Route::get('/productpage', 'productpage@dashboard')->name('productpage');
+Route::get('/contactformulier', 'contactformulier@dashboard')->name('contactformulier');
 
 Route::get('/register', function (){return 'ik mag hier komen...';})->middleware('auth','role:3');
 
