@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use function foo\func;
 
 class CheckRole
 {
@@ -15,11 +16,16 @@ class CheckRole
      */
     public function handle($request, Closure $next, $role_id)
     {
+
+
         if ($request->user()->role_id != 1 && $request->user()->role_id != $role_id) {
 
             return redirect('home');
 
         }
+
+
+        return $next($request);
     }
 }
 
