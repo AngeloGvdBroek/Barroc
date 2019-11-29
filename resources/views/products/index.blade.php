@@ -2,8 +2,16 @@
 
 @section('content')
 
-    @auth  <a href="{{ route('products.create') }}">CREATE</a> @endauth
-
+ <style>
+     ul{
+         padding-top: 50px;
+     }
+ </style>
+    <form>
+        <button name="submitbtn"></button>
+        <input name="name">
+        <button></button>
+    </form>
         <ul>
                 @foreach($products as $product)
                 @if($product->amount == 0) <li> <h1> {{ $product->name }} not available  </h1>@endif
