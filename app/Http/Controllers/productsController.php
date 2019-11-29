@@ -138,27 +138,27 @@ class productsController extends Controller
     public function filter(Request $request){
         $btn = $_POST['submitbtn'];
         if($btn == "clear"){
-            $products = Supplies::all();
-            return view('supplies.index', [ 'products' => $products]);
+            $products = Product::all();
+            return view('Product.index', [ 'products' => $products]);
         }
 
         $name = $request->input('name');
-        $products = Supplies::where('name')
+        $products = Product::where('name')
             ->orWhere( 'name',  'like',  '%' . $name . '%' )->get();
 
         $checkbox_stock = $request->input('enough', false);
         if($checkbox_stock == 'to-little'){
 
-            $products = Supplies::where('units')
+            $products = Product::where('units')
                 ->orWhere('units' , '<', 3)->get();
 
         }
 
         if($checkbox_stock == 'enough'){
-            $products = Supplies::where('units')
+            $products = Product::where('units')
                 ->orWhere('units', '>', 3)->get();
         }
-        return view('inkoop.index', ['products' => $products]);
+        return view('products.index', ['products' => $products]);
     }
     public function update(Request $request, $id)
     {
