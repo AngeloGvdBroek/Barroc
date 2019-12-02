@@ -16,12 +16,12 @@ class CheckRole
      */
     public function handle($request, Closure $next, $role_id)
     {
+        if ($request->user()->role_id == 1 || $request->user()->role_id == $role_id) {
 
-
-        if ($request->user()->role_id != 1 && $request->user()->role_id != $role_id) {
-
-            return redirect('home');
-
+            return $next($request);
+        }
+        else {
+            dd('Hier mag je niet komen');
         }
 
 

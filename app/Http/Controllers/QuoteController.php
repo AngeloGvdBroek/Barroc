@@ -27,9 +27,10 @@ class QuoteController extends Controller
      */
     public function create()
     {
-        $customers = \App\Customer::all();
+        $customers = \App\User::where('role_id', 7)->get();
+        $products = \App\Supply::where('id', '<', '5')->get();
 
-        return view('sales/quotes/create', ['customers' => $customers]);
+        return view('sales/quotes/create', array('customers' => $customers, 'products' => $products));
     }
 
     /**
@@ -41,20 +42,57 @@ class QuoteController extends Controller
     public function store(Request $request)
     {
         // Stores quote in database
-
         $this->validate($request, [
             'customerId'    => 'required|exists:users,id',
-            'product'       => 'required|max:50',
-            'amount'        => 'required',
             'price'         => 'required'
         ]);
 
         $quote = new Quote();
         $quote->sales_id = 1;
         $quote->customer_id = $request->customerId;
-        $quote->product = $request->product;
 
         $quote->save();
+
+        $purchase = new \App\Purchase();
+        $purchase->user_id = \Auth::user()->id;
+
+        $purchase->save();
+
+        // Purchase Rule 1
+        if ($request->amount1 != null) {
+            $purchaseRules = new \App\Purchase_Rule();
+            $purchaseRules->purchase_id = $purchase->id;
+            $purchaseRules->supply_id = $request->amount1;
+
+            $purchaseRules->save();
+        }
+
+        // Purchase Rule 2
+        if ($request->amount2 != null) {
+            $purchaseRules = new \App\Purchase_Rule();
+            $purchaseRules->purchase_id = $purchase->id;
+            $purchaseRules->supply_id = $request->amount2;
+
+            $purchaseRules->save();
+        }
+
+        // Purchase Rule 3
+        if ($request->amount3 != null) {
+            $purchaseRules = new \App\Purchase_Rule();
+            $purchaseRules->purchase_id = $purchase->id;
+            $purchaseRules->supply_id = $request->amount3;
+
+            $purchaseRules->save();
+        }
+
+        // Purchase Rule 4
+        if ($request->amount4 != null) {
+            $purchaseRules = new \App\Purchase_Rule();
+            $purchaseRules->purchase_id = $purchase->id;
+            $purchaseRules->supply_id = $request->amount4;
+
+            $purchaseRules->save();
+        }
 
         // When quote has been made, send message to finance so they can confirm this
         //\Mail::to( \Auth::user() )->send( new \App\Mail\QuoteMail('gebruikersnaam') );
@@ -74,10 +112,10 @@ class QuoteController extends Controller
      */
     public function show(Quote $quote)
     {
-        $user = \App\User::find($quote->customer_id);
-        $customer = \App\Customer::find($user->id);
+        $customer = \App\User::find($quote->customer_id);
+        $user = \App\User::find($quote->sales_id);
 
-        return view('sales/quotes/show', array('customer' => $customer, 'quote' => $quote) );
+        return view('sales/quotes/show', array('customer' => $customer, 'user' => $user) );
     }
 
     /**

@@ -2,16 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\purchase;
 use Illuminate\Http\Request;
 
-class PurchaseController extends Controller
+class InvoiceController extends Controller
 {
-    public function dashboard()
-    {
-        return view('purchase/index');
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -19,7 +13,9 @@ class PurchaseController extends Controller
      */
     public function index()
     {
-        //
+        $quotes = \App\Quote::paginate(15);
+
+        return view('finance.invoices.index', ['quotes' => $quotes]);
     }
 
     /**
@@ -46,10 +42,10 @@ class PurchaseController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\purchase  $purchase
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(purchase $purchase)
+    public function show($id)
     {
         //
     }
@@ -57,10 +53,10 @@ class PurchaseController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\purchase  $purchase
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(purchase $purchase)
+    public function edit($id)
     {
         //
     }
@@ -69,10 +65,10 @@ class PurchaseController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\purchase  $purchase
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, purchase $purchase)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -80,10 +76,10 @@ class PurchaseController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\purchase  $purchase
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(purchase $purchase)
+    public function destroy($id)
     {
         //
     }

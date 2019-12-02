@@ -5,12 +5,12 @@
 <div class="container">
 
 	<ul>
-	@foreach( $customers as $customer )
-		<li><a href="{{ route('customers.show', $customer->id) }}">{{ $customer->company_name }}</a></li>
+	@foreach( $users as $user )
+		<li><a href="{{ route('customers.show', $user->id) }}">{{ $user->name }}</a></li>
 	@endforeach
 	</ul>
 
-	{{ $customers->links() }}
+	{{ $users->links() }}
 
 	<a class="btn btn-primary" href="{{ route('customers.create') }}">Maak klant aan</a>
 

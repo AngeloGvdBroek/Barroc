@@ -26,6 +26,37 @@ class LoginController extends Controller
      * @var string
      */
     protected $redirectTo = '/home';
+    public function redirectTo() 
+    {
+        $user = \Auth::user();
+
+        switch ($user->role_id) {
+            case 1:
+                // Admin
+                dd('Dit is de admin pagina.');
+                break;
+            case 2:
+                return 'sales';
+                break;
+            case 3:
+                return 'finance';
+                break;
+            case 4:
+                return 'maintenance';
+                break;
+            case 5:
+                // Head maintenance
+                dd('Dit is de head maintenance pagina.');
+                break;
+            case 6:
+                return 'purchase';
+                break;
+            case 7:
+                // Customer
+                dd('Dit is de klanten pagina.');
+                break;
+        }
+    }
 
     /**
      * Create a new controller instance.
