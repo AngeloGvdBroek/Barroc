@@ -25,7 +25,7 @@ class CreatePurchaseRulesTable extends Migration
 
             $table->foreign('supply_id')
                 ->references('id')
-                ->on('supplies');
+                ->on('supply');
         });
     }
 

@@ -11,7 +11,7 @@ class SuppliesTableSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-        \DB::table('supplies')->insert(
+        \DB::table('supply')->insert(
             [
                 [
                     'name'      => 'koffiemachine 1',

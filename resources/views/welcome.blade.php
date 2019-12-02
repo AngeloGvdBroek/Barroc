@@ -20,7 +20,7 @@
             @if (Route::has('login'))
                 <div class="top-left links">
                     <a href=""><img src="{{ asset('img/logo.png') }}" alt="test"></a>
-                    <a href="{{ url('/products') }}" style="vertical-align: top">producten</a>
+                    <a href="{{ url('supply') }}" style="vertical-align: top">producten</a>
                 </div>
 
                 <div class="top-right links">
