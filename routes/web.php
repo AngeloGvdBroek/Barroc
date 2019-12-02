@@ -22,10 +22,12 @@ Route::resource('categories.show', 'categoriesController');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/sales', 'SalesController@dashboard')->name('sales');
 Route::get('/productpage', 'productpage@dashboard')->name('productpage');
-Route::get('/contactformulier', 'contactformulier@dashboard')->name('contactformulier');
 route::post('products.filter', 'productsController@filter')->name('productsController.filter');
+Route::get('/contactform', 'contactformulier@dashboard')->name('contactformulier');
 Route::get('/register', function (){return  view('/auth/register');})->middleware('role:1');
 Route::get('/register', 'Auth\RegisterController@showRegistrationForm')->name('register');
 Route::resource('quotes', 'QuoteController');
 Route::resource('customers', 'CustomerController');
+Route::resource("contactformulier", "contactformulierController");
+
 

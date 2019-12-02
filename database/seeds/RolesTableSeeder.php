@@ -29,7 +29,7 @@ class RolesTableSeeder extends Seeder
                'name' => 'head_maintenance'
            ],
             [
-                'name' => 'inkoop'
+                'name' => 'purchase'
             ]
         ]);
     }
