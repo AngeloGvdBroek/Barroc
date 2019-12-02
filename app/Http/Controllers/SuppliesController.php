@@ -136,6 +136,7 @@ class suppliesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function filter(Request $request){
+
         $btn = $_POST['submitbtn'];
         if($btn == "clear"){
             $supply = supply::all();
@@ -144,21 +145,22 @@ class suppliesController extends Controller
 
         $name = $request->input('name');
         $supply = supply::where('name')
-            ->orWhere( 'name',  'like',  '%' . $name . '%' )->get();
+            ->orWhere( 'name',  'like',  '%' . $name . '%' )->paginate();
 
         $checkbox_stock = $request->input('enough', false);
         if($checkbox_stock == 'to-little'){
 
             $supply = supply::where('in_stock')
-                ->orWhere('in_stock' , '<', 3)->get();
+                ->orWhere('in_stock' , '<', 3)->paginate();
 
         }
 
         if($checkbox_stock == 'enough'){
             $supply = supply::where('in_stock')
-                ->orWhere('in_stock', '>', 3)->get();
+                ->orWhere('in_stock', '>', 3)->paginate();
         }
-        return view('purchase/suppliesPurchase.index', ['supply' => $supply]);
+
+        return view('supply.index', ['supply' => $supply]);
     }
     public function update(Request $request, $id)
     {

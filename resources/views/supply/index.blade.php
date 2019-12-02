@@ -3,7 +3,6 @@
     <div class="form-group">
         <input type="text" name="name">
         <input type="submit" name="submitbtn" value="search">
-        <input type="submit" name="submitbtn" value="clear">
     </div>
 
     <div class="form-group">

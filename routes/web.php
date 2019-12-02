@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-route::post('supply.filter', 'SuppliesController@filter')->name('supply.filter');
+Route::post('supply.filter', 'SuppliesController@filter')->name('supply.filter');
 Route::resource('supply', 'SuppliesController');
 //Route::resource('categories', 'categoriesController');
 //Route::resource('categories.show', 'categoriesController');
