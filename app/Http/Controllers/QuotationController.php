@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use \App\Quote;
+use \App\Quotation;
 use \App\User;
 use Illuminate\Http\Request;
 
-class QuoteController extends Controller
+class QuotationController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class QuoteController extends Controller
      */
     public function index()
     {
-        $quotes = Quote::paginate(15);
+        $quotes = Quotation::paginate(15);
 
         return view('sales/quotes/index', ['quotes' => $quotes]);
     }
@@ -47,14 +47,15 @@ class QuoteController extends Controller
             'price'         => 'required'
         ]);
 
-        $quote = new Quote();
+        $quote = new Quotation();
         $quote->sales_id = 1;
         $quote->customer_id = $request->customerId;
 
         $quote->save();
 
         $purchase = new \App\Purchase();
-        $purchase->user_id = \Auth::user()->id;
+        $purchase->total_price = $request->price;
+        $purchase->quotation_id = $quote->id;
 
         $purchase->save();
 
@@ -62,7 +63,8 @@ class QuoteController extends Controller
         if ($request->amount1 != null) {
             $purchaseRules = new \App\Purchase_Rule();
             $purchaseRules->purchase_id = $purchase->id;
-            $purchaseRules->supply_id = $request->amount1;
+            $purchaseRules->supply_id = $request->product1;
+            $purchaseRules->amount = $request->amount1;
 
             $purchaseRules->save();
         }
@@ -71,7 +73,8 @@ class QuoteController extends Controller
         if ($request->amount2 != null) {
             $purchaseRules = new \App\Purchase_Rule();
             $purchaseRules->purchase_id = $purchase->id;
-            $purchaseRules->supply_id = $request->amount2;
+            $purchaseRules->supply_id = $request->product2;
+            $purchaseRules->amount = $request->amount2;
 
             $purchaseRules->save();
         }
@@ -80,7 +83,8 @@ class QuoteController extends Controller
         if ($request->amount3 != null) {
             $purchaseRules = new \App\Purchase_Rule();
             $purchaseRules->purchase_id = $purchase->id;
-            $purchaseRules->supply_id = $request->amount3;
+            $purchaseRules->supply_id = $request->product3;
+            $purchaseRules->amount = $request->amount3;
 
             $purchaseRules->save();
         }
@@ -89,7 +93,8 @@ class QuoteController extends Controller
         if ($request->amount4 != null) {
             $purchaseRules = new \App\Purchase_Rule();
             $purchaseRules->purchase_id = $purchase->id;
-            $purchaseRules->supply_id = $request->amount4;
+            $purchaseRules->supply_id = $request->product4;
+            $purchaseRules->amount = $request->amount4;
 
             $purchaseRules->save();
         }
@@ -110,12 +115,17 @@ class QuoteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Quote $quote)
+    public function show(Quotation $quote)
     {
+
         $customer = \App\User::find($quote->customer_id);
         $user = \App\User::find($quote->sales_id);
 
-        return view('sales/quotes/show', array('customer' => $customer, 'user' => $user) );
+        $quote = \App\Quotation::where('id', $quote->id)->with('purchase', 'purchase.supplies')->get();
+
+
+        return $quote['id'];
+        return view('sales/quotes/show', ['quote' => $quote, 'user' => $user, 'customer'=> $customer] );
     }
 
     /**

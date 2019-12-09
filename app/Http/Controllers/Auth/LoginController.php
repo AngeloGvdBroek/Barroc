@@ -33,7 +33,7 @@ class LoginController extends Controller
         switch ($user->role_id) {
             case 1:
                 // Admin
-                dd('Dit is de admin pagina.');
+                return 'admin';
                 break;
             case 2:
                 return 'sales';
@@ -46,14 +46,14 @@ class LoginController extends Controller
                 break;
             case 5:
                 // Head maintenance
-                dd('Dit is de head maintenance pagina.');
+                return 'head-maintenance';
                 break;
             case 6:
                 return 'purchase';
                 break;
             case 7:
                 // Customer
-                dd('Dit is de klanten pagina.');
+                return 'customer';
                 break;
         }
     }

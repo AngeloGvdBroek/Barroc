@@ -70,9 +70,7 @@ class CustomerController extends Controller
      */
     public function show(Customer $customer)
     {
-        $user = User::find($customer->user_id);
-
-        return view('sales/customers/show', ['user' => $user]);
+        return view('sales/customers/show', ['user' => $customer]);
     }
 
     /**
@@ -95,7 +93,22 @@ class CustomerController extends Controller
      */
     public function update(Request $request, Customer $customer)
     {
-        //
+        $this->validate($request, [
+            'companyName' => 'required',
+            'email' => 'required',
+            'password' => 'required'
+        ]);
+
+        // Insert new user in database
+        $user = \App\User::find($customer->id);
+        $user->name = $request->companyName;
+        $user->email = $request->email;
+        $user->password = $request->password;
+        $user->save();
+
+        $id = $customer->id;
+
+        return redirect()->route('customers.show', $id);
     }
 
     /**
