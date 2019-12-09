@@ -49,15 +49,15 @@ class CustomerController extends Controller
         $user->role_id = 7;
         $user->name = $request->companyName;
         $user->email = $request->email;
-        $user->password = $request->password;
+        $user->password = password_hash($request->password, PASSWORD_DEFAULT);
         $user->save();
 
         // Insert new customer in database
-        $customer = new Customer();
+        /*$customer = new Customer();
         $customer->user_id = $user->id;
-        $customer->save();
+        $customer->save();*/
 
-        $id = $customer->id;
+        $id = $user->id;
 
         return redirect()->route('customers.show', $id);
     }
