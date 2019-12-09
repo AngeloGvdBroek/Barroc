@@ -14,7 +14,7 @@
                 </div>
             @endif
 
-            <form method="post" action="{{url('sendemail/send')}}">
+            <form method="GET" action="{{url('/')}}"> {{--url('sendemail/send')--}}
 
             @csrf
 
