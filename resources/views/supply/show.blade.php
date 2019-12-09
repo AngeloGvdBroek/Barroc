@@ -10,9 +10,9 @@
             <br>
             <br>
 {{--            <button>Add to shopping card</button>--}}
-            @auth    <div class="editbutton">  <a class="btn btn-primary" href="{{ route('products.edit', $product->id) }}">EDIT</a> </div> @endauth
+            @auth    <div class="editbutton">  <a class="btn btn-primary" href="{{ route('supply', $product->id) }}">EDIT</a> </div> @endauth
 
-            <form method="POST" action="{{ route('products.destroy', $product->id) }}">
+            <form method="POST" action="{{ route('supply', $product->id) }}">
                 @csrf
                 @method('DELETE')
 

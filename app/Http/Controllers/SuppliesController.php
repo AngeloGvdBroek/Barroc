@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 use App\Category;
-use \App\Product;
+use \App\supply;
 use Illuminate\Http\Request;
 
-class productsController extends Controller
+class suppliesController extends Controller
 
 {
     public function __construct()
@@ -20,8 +20,8 @@ class productsController extends Controller
     public function index()
     {
 
-        $products = Product::paginate(15);
-        return view('products/index', ['products' => $products]);
+        $supplies = supply::paginate(15);
+        return view('supply/index', ['supply' => $supplies]);
     }
 
     /**
@@ -34,7 +34,7 @@ class productsController extends Controller
 
         $categories = Category::all();
 
-        return view('products/create', ['categories'=>$categories]);
+        return view('supply/create', ['categories'=>$categories]);
     }
 
     /**
@@ -55,7 +55,7 @@ class productsController extends Controller
 
         $fileName = $request->image->getClientOriginalName();
 
-        Product::insert([
+        supply::insert([
             'name'           => $request->name,
             'price'          => $request->price,
             'image_path'          => $fileName,
@@ -67,7 +67,7 @@ class productsController extends Controller
 
         \Mail::to(\Auth::user())->send(new \App\Mail\TestMail($request->name) );
 
-        return redirect()->route('products.index');
+        return redirect()->route('supply.index');
     }
 
     /**
@@ -84,20 +84,20 @@ class productsController extends Controller
         // 3. show template returnen met opgehaalde data
 
         // oud
-        $product = \DB::table('products')
+        $supply = \DB::table('supply')
             ->where('id', $id)
             ->first();
 
         // nieuw met model
-        $product = Product::find($id);
+        $supply = supply::find($id);
 
 
-        return view('products/show', ['product' => $product] );
+        return view('supply/show', ['supply' => $supply] );
     }
 
     public function addItem($id){
 
-        $pro = products::find($id);
+        $pro = supply::find($id);
         Cart::add(['id' => $pro->id, 'name' => $pro->pro_name,
             'qty' => 1, 'price' => $pro->pro_price,
             'options' =>[
@@ -118,47 +118,49 @@ class productsController extends Controller
      */
     public function edit($id)
     {
-        $product = Product::find($id);
+        $supply = supply::find($id);
 
         $categories = Category::all();
 
-        return view('products.edit', [
-            'product' => $product,
+        return view('supply.edit', [
+            'supply' => $supply,
             'categories' => $categories
         ]);
     }
 
     /**
      * Update the specified resource in storage.
-     *
+     *su
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function filter(Request $request){
+
         $btn = $_POST['submitbtn'];
         if($btn == "clear"){
-            $products = Product::all();
-            return view('Product.index', [ 'products' => $products]);
+            $supply = supply::all();
+            return view('supply.index', [ '$supply' => $supply]);
         }
 
         $name = $request->input('name');
-        $products = Product::where('name')
-            ->orWhere( 'name',  'like',  '%' . $name . '%' )->get();
+        $supply = supply::where('name')
+            ->orWhere( 'name',  'like',  '%' . $name . '%' )->paginate();
 
         $checkbox_stock = $request->input('enough', false);
         if($checkbox_stock == 'to-little'){
 
-            $products = Product::where('units')
-                ->orWhere('units' , '<', 3)->get();
+            $supply = supply::where('in_stock')
+                ->orWhere('in_stock' , '<', 3)->paginate();
 
         }
 
         if($checkbox_stock == 'enough'){
-            $products = Product::where('units')
-                ->orWhere('units', '>', 3)->get();
+            $supply = supply::where('in_stock')
+                ->orWhere('in_stock', '>', 3)->paginate();
         }
-        return view('products.index', ['products' => $products]);
+
+        return view('supply.index', ['supply' => $supply]);
     }
     public function update(Request $request, $id)
     {
@@ -166,7 +168,7 @@ class productsController extends Controller
         $fileName = $request->image->getClientOriginalName();
         // 1. ingekomen aanpassingen aanpassen op de juiste plaats
         // 2. redirecten naar show of index
-        \DB::table('products')
+        \DB::table('supply')
             ->where('id', $id)
             ->update([
                 'name'          => $request->name,
@@ -176,7 +178,7 @@ class productsController extends Controller
             ]);
         $request->image->storeAs('public/images', $fileName);
 
-        return redirect()->route('products.show', $id);
+        return redirect()->route('supply.show', $id);
     }
 
     /**
@@ -186,9 +188,9 @@ class productsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
-    {
-        Product::destroy($id);
+            {
+        supply::destroy($id);
 
-        return redirect()->route('products.index');
+        return redirect()->route('supply.index');
     }
 }

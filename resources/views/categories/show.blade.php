@@ -15,6 +15,6 @@
     </form>
     <h2>Products related:</h2>
     @foreach($category->products as $product)
-    <li>  <a href="{{ route('products.show', $product->id ) }}"> {{ $product->name }} </a></li>
+    <li>  <a href="{{ route('supply', $product->id ) }}"> {{ $product->name }} </a></li>
     @endforeach
 @endsection

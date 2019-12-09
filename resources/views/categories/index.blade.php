@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-        <h2><a href="{{ route('products.index')}}">Go to Products</a></h2>
+        <h2><a href="{{ route('supply')}}">Go to Products</a></h2>
         <h1>Categories:</h1>
         <ul>
                 @foreach($categories as $category)

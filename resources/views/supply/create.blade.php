@@ -8,7 +8,7 @@
                 @endforeach
         </div>
         @endif
-    <form action="{{ route('products.store') }}" method="post" enctype="multipart/form-data">
+    <form action="{{ route('supply') }}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
             <label for="name">Name</label>
