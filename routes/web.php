@@ -37,6 +37,8 @@ Route::get('/register', function (){return  view('/auth/register');})->middlewar
 Route::get('/register', 'Auth\RegisterController@showRegistrationForm')->name('register');
 
 Route::resource("contactformulier", "contactformulierController");
+Route::get('/sendemail', 'ContactformulierController@sendmail');
+Route::post('/sendemail/send', 'ContactformulierController@send');
 
 Route::get('/sales', 'SalesController@dashboard')->name('sales')->middleware('auth', 'role:2');
 Route::get('/finance', 'FinanceController@dashboard')->name('finance')->middleware('auth', 'role:3');
