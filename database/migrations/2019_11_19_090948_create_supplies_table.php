@@ -13,7 +13,7 @@ class CreateSuppliesTable extends Migration
      */
     public function up()
     {
-        Schema::create('supplies', function (Blueprint $table) {
+        Schema::create('supply', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
             $table->integer('in_stock');
@@ -30,6 +30,6 @@ class CreateSuppliesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('supplies');
+        Schema::dropIfExists('supply');
     }
 }

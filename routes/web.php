@@ -16,13 +16,19 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-Route::resource('products', 'productsController');
-Route::resource('categories', 'categoriesController');
-Route::resource('categories.show', 'categoriesController');
+Route::post('supply.filter', 'SuppliesController@filter')->name('supply.filter');
+Route::resource('supply', 'SuppliesController');
+//Route::resource('categories', 'categoriesController');
+//Route::resource('categories.show', 'categoriesController');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/productpage', 'productpage@dashboard')->name('productpage');
+
 route::post('products.filter', 'productsController@filter')->name('productsController.filter');
 Route::get('/contactform', 'contactformulier@dashboard')->name('contactformulier');
+
+Route::get('/contactformulier', 'contactformulier@dashboard')->name('contactformulier');
+//route::post('supply.filter', 'suppliesController@filter')->name('suppliesController.filter');
+
 Route::get('/register', function (){return  view('/auth/register');})->middleware('role:1');
 Route::get('/register', 'Auth\RegisterController@showRegistrationForm')->name('register');
 
