@@ -17,6 +17,10 @@ Route::get('/', function () {
 
 Auth::routes();
 Route::post('supply.filter', 'SuppliesController@filter')->name('supply.filter');
+//Route::get('faults', 'FaultsController@create')->name('faults.create');
+Route::resource('faults', 'FaultsController');
+Route::resource('workorders', 'WorkOrdersController');
+//Route::resource('faults.show', 'FaultsController@show')->name('faults.show');
 Route::resource('supply', 'SuppliesController');
 //Route::resource('categories', 'categoriesController');
 //Route::resource('categories.show', 'categoriesController');
