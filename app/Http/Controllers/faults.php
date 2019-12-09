@@ -4,17 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class  ContactformulierController extends Controller
+class faults extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    function sendmail()
-    {
-        return view('send_email');
-    }
     public function index()
     {
         //
@@ -85,5 +81,4 @@ class  ContactformulierController extends Controller
     {
         //
     }
-
 }

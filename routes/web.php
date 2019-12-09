@@ -18,6 +18,10 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::post('supply.filter', 'SuppliesController@filter')->name('supply.filter');
+//Route::get('faults', 'FaultsController@create')->name('faults.create');
+Route::resource('faults', 'FaultsController');
+Route::resource('workorders', 'WorkOrdersController');
+//Route::resource('faults.show', 'FaultsController@show')->name('faults.show');
 Route::resource('supply', 'SuppliesController');
 //Route::resource('categories', 'categoriesController');
 //Route::resource('categories.show', 'categoriesController');
@@ -39,6 +43,8 @@ Route::get('/register', function (){return  view('/auth/register');})->middlewar
 Route::get('/register', 'Auth\RegisterController@showRegistrationForm')->name('register');
 
 Route::resource("contactformulier", "contactformulierController");
+Route::get('/sendemail', 'ContactformulierController@sendmail');
+Route::post('/sendemail/send', 'ContactformulierController@send');
 
 Route::get('/sales', 'SalesController@dashboard')->name('sales')->middleware('auth', 'role:2');
 

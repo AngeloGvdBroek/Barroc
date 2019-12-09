@@ -1,23 +1,30 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use \App\fault;
+use App\workorder;
+use Auth;
 use Illuminate\Http\Request;
 
-class  ContactformulierController extends Controller
+class workOrdersController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    function sendmail()
+    public function __construct()
     {
-        return view('send_email');
+
+        $this->middleware('auth');
+        $this->middleware('role:1');
+
+
     }
     public function index()
     {
-        //
+        $workorders = \App\workorder::all();
+        return view('workorder/overview', ['workorders' => $workorders] );
     }
 
     /**
@@ -27,7 +34,9 @@ class  ContactformulierController extends Controller
      */
     public function create()
     {
-        //
+
+
+        return view('workOrder/create');
     }
 
     /**
@@ -38,7 +47,32 @@ class  ContactformulierController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->middleware('auth');
+        $user_id = Auth::user()->id;
+
+        $this->validate($request, [
+            'work_adress'          => 'required|max:50',
+            'description'         => 'required|max:250',
+            'total_price'         => 'required|max:250',
+
+        ]);
+
+
+        workorder::insert([
+
+            'work_adress'           => $request->work_adress,
+            'description'          => $request->description,
+            'total_price'          => $request->total_price,
+            'user_id' => $user_id
+        ]);
+
+
+
+
+
+
+
+        return redirect()->route('work');
     }
 
     /**
@@ -47,9 +81,21 @@ class  ContactformulierController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+
     public function show($id)
     {
-        //
+        \App\workorder::all();
+
+        $faults = \DB::table('workorders')
+            ->where('id', $id)
+            ->first();
+
+        // nieuw met model
+        $workorder = workorder::find($id);
+
+
+        return view('faults/overview', ['workorder' => $workorder] );
     }
 
     /**
@@ -85,5 +131,4 @@ class  ContactformulierController extends Controller
     {
         //
     }
-
 }

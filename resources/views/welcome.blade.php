@@ -14,7 +14,7 @@
     </head>
 
     <header>
-
+        <a href="{{ route('faults.index') }}">TEST</a>
         <div class="flex-center position-ref full-height">
             
             @if (Route::has('login'))

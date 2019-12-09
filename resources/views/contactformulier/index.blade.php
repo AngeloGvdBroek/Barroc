@@ -14,9 +14,9 @@
                 </div>
             @endif
 
-            <form action="{{ route('contactformulier.store') }}" method="POST">
+            <form method="GET" action="{{url('/')}}"> {{--url('sendemail/send')--}}
 
-                @csrf
+            @csrf
 
                 <div class="form-group">
                     <label for="email">Email</label>
@@ -25,7 +25,13 @@
 
                 <div class="form-group">
                     <label for="text">Bericht</label>
+                    <textarea name="message" id="" cols="30" rows="10" class="form-control"></textarea>
+                </div>
 
+                <div class="form-group">
+                    <button class="button">
+                        <h3 class="barroc_yellow">submit</h3>
+                    </button>
                 </div>
             </form>
 
