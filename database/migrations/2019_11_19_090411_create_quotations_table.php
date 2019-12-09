@@ -17,7 +17,7 @@ class CreateQuotationsTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('sales_id');
             $table->unsignedBigInteger('customer_id');
-
+            
             $table->timestamps();
 
             $table->foreign('sales_id')
@@ -28,6 +28,7 @@ class CreateQuotationsTable extends Migration
             $table->foreign('customer_id')
                 ->references('id')
                 ->on('users');
+
         });
     }
 

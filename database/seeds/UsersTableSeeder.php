@@ -29,6 +29,12 @@ class UsersTableSeeder extends Seeder
                'name'   => 'Sales Medewerker',
                'password' => Hash::make('barroc123'),
                'role_id'  => 2
+           ],
+           [
+               'email'  => 'info@mediamarkt.nl',
+               'name'   => 'Mediamarkt',
+               'password' => Hash::make('mediamarkt123'),
+               'role_id'  => 7
            ]
         ]);
     }

@@ -29,7 +29,7 @@
 
 		<div class="form-group">
 			<label for="password">Wachtwoord</label>
-			<input class="form-control" type="text" name="password">
+			<input class="form-control" type="password" name="password">
 		</div>
 
 		<div class="form-group">

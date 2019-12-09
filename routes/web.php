@@ -16,14 +16,20 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+
 Route::post('supply.filter', 'SuppliesController@filter')->name('supply.filter');
 Route::resource('supply', 'SuppliesController');
 //Route::resource('categories', 'categoriesController');
 //Route::resource('categories.show', 'categoriesController');
+
+route::post('products.filter', 'productsController@filter')->name('productsController.filter');
+
+//Route::resource('products', 'productsController');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/productpage', 'productpage@dashboard')->name('productpage');
 
-route::post('products.filter', 'productsController@filter')->name('productsController.filter');
+//route::post('products.filter', 'productsController@filter')->name('productsController.filter');
+
 Route::get('/contactform', 'contactformulier@dashboard')->name('contactformulier');
 
 Route::get('/contactformulier', 'contactformulier@dashboard')->name('contactformulier');
@@ -35,6 +41,8 @@ Route::get('/register', 'Auth\RegisterController@showRegistrationForm')->name('r
 Route::resource("contactformulier", "contactformulierController");
 
 Route::get('/sales', 'SalesController@dashboard')->name('sales')->middleware('auth', 'role:2');
+
+
 Route::get('/finance', 'FinanceController@dashboard')->name('finance')->middleware('auth', 'role:3');
 Route::get('/maintenance', 'MaintenanceController@dashboard')->name('maintenance')->middleware('auth', 'role:4');
 // Route::get('/head-maintenance', 'HeadMaintenanceController@dashboard')->name('head-maintenance')->middleware('auth', 'role:5');
@@ -45,6 +53,6 @@ Route::get('/test', function() {
 	dd($user->role_id);
 });
 
-Route::resource('quotes', 'QuoteController')->middleware('auth', 'role:2', 'role:7');
+Route::resource('quotes', 'QuotationController')->middleware('auth', 'role:2', 'role:7');
 Route::resource('customers', 'CustomerController');
 Route::resource('invoices', 'InvoiceController');

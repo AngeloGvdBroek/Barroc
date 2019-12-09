@@ -15,13 +15,14 @@ class CreatePurchasesTable extends Migration
     {
         Schema::create('purchases', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('user_id');
+            $table->decimal('total_price');
+            $table->unsignedBigInteger('quotation_id');
 
             $table->timestamps();
 
-            $table->foreign('user_id')
+            $table->foreign('quotation_id')
                 ->references('id')
-                ->on('users');
+                ->on('quotations');
         });
     }
 
