@@ -89,7 +89,7 @@
     <div class="Contact-details">
         <br>
     <ul>
-        <a href="{{url('\contactformulier ')}}" class="button">offerte aanvragen? <mark class="barroc_yellow">klik hier</mark></a>
+        <a href="{{url('contactform')}}" class="button">offerte aanvragen? <mark class="barroc_yellow">klik hier</mark></a>
     </ul>
     </div>
     <div class="Contact-details-logo">

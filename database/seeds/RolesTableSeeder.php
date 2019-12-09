@@ -13,23 +13,26 @@ class RolesTableSeeder extends Seeder
     public function run(Faker $faker)
     {
         \DB::table('roles')->insert([
-           [
-               'name' => 'admin'
-           ],
-           [
-               'name' => 'sales'
-           ],
-           [
-               'name' => 'finance'
-           ],
-           [
-               'name' => 'maintenance'
-           ],
-           [
-               'name' => 'head_maintenance'
-           ],
             [
-                'name' => 'inkoop'
+               'name' => 'admin'
+            ],
+            [
+               'name' => 'sales'
+            ],
+            [
+               'name' => 'finance'
+            ],
+            [
+               'name' => 'maintenance'
+            ],
+            [
+               'name' => 'head_maintenance'
+            ],
+            [
+                'name' => 'purchase'
+            ],
+            [
+                'name' => 'customer'
             ]
         ]);
     }

@@ -21,24 +21,28 @@
 			<label for="customerId">Klant</label>
 			<select class="form-control" name="customerId" id="">
                 @foreach( $customers as $customer )
-                    <option value="{{ $customer->id }}"> {{ $customer->company_name }}</option>
+                    <option value="{{ $customer->id }}"> {{ $customer->name }}</option>
                 @endforeach
             </select>
 		</div>
 
-		<div class="form-group">
-			<label for="product">Product</label>
-			<input class="form-control" type="text" name="product">
+		@foreach($products as $product)
+		<div class="row">
+			<div class="col">
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value="{{ $product->id }}" name="product{{ $product->id }}">
+					<label class="form-check-label" for="product{{ $product->id }}">{{ $product->name }}</label>
+				</div>
+			</div>
+			<div class="col">
+				<input class="form-control" type="text" name="amount{{ $product->id }}" placeholder="Aantal">
+			</div>
 		</div>
+		@endforeach
 
 		<div class="form-group">
-			<label for="amount">Aantal</label>
-			<input class="form-control" type="text" name="amount">
-		</div>
-
-		<div class="form-group">
-			<label for="price">Prijs</label>
-			<input class="form-control" type="text" name="price">
+			<label for="price">Totaal prijs</label>
+			<input class="form-control" type="text" name="price" placeholder="Totaal prijs">
 		</div>
 
 		<div class="form-group">

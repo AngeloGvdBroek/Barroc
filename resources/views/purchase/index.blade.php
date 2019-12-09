@@ -1,3 +1,13 @@
+@extends('layouts/app')
+
+@section('content')
+
+<div class="container">
+	<h1>Welkom op de Inkoop pagina</h1>
+
+    <a href=""><p>Lorem ipsum dolor.</p></a>
+</div>
+
 <form action="{{route('supply')}}" method="post">
     @csrf
     <div class="form-group">
@@ -15,3 +25,5 @@
     </div>
 
 </form>
+
+@endsection

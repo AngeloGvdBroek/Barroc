@@ -6,7 +6,7 @@
 
 	<ul>
 	@foreach( $quotes as $quote )
-		<li><a href="{{ route('quotes.show', $quote->id) }}">{{ $quote->product }}</a></li>
+		<li><a href="{{ route('quotes.show', $quote->id) }}">{{ \App\User::find($quote->customer_id)->name }}</a></li>
 	@endforeach
 	</ul>
 

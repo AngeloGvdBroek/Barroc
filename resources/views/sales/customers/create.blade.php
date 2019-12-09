@@ -33,26 +33,6 @@
 		</div>
 
 		<div class="form-group">
-			<label for="address">Adres</label>
-			<input class="form-control" type="text" name="address">
-		</div>
-
-		<div class="form-group">
-			<label for="city">Plaats</label>
-			<input class="form-control" type="text" name="city">
-		</div>
-
-		<div class="form-group">
-			<label for="postalCode">Postcode</label>
-			<input class="form-control" type="text" name="postalCode">
-		</div>
-
-		<div class="form-group">
-			<label for="phoneNumber">Telefoonnummer</label>
-			<input class="form-control" type="text" name="phoneNumber">
-		</div>
-
-		<div class="form-group">
             <input class="btn btn-primary" type="submit" value="Maak klant aan">
         </div>
 
