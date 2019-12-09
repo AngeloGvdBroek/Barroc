@@ -14,13 +14,16 @@
     </head>
 
     <header>
-        <a href="{{ route('faults.index') }}">TEST</a>
+{{--        <a href="{{ route('faults.index') }}">TEST</a>--}}
         <div class="flex-center position-ref full-height">
-            
+
             @if (Route::has('login'))
                 <div class="top-left links">
                     <a href=""><img src="{{ asset('img/logo.png') }}" alt="test"></a>
                     <a href="{{ url('supply') }}" style="vertical-align: top">producten</a>
+                    <a href="{{ url('faults') }}" style="vertical-align: top">storingen</a>
+                    <a href="{{ url('faults/create') }}" style="vertical-align: top">storing aanmaken</a>
+                    <a href="{{ url('workorders/create') }}" style="vertical-align: top">werkbon aanmaken</a>
                 </div>
 
                 <div class="top-right links">

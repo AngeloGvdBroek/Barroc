@@ -5,7 +5,8 @@
 
     @csrf
 
-    <h1>Storingsmeldingen:</h1>
+    <h1>Storingsmeldingen
+        :</h1>
     <ul>
         @foreach($faults as $fault)
             <li> <h1> {{ $fault->Title }}, {{ $fault->Description }} </h1>   </li>
