@@ -15,6 +15,7 @@ class CreateLeaseTypesTable extends Migration
     {
         Schema::create('lease_types', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->text('type');
 
 
             $table->timestamps();

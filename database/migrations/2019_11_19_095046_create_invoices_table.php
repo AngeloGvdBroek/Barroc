@@ -16,6 +16,7 @@ class CreateInvoicesTable extends Migration
         Schema::create('invoices', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('lease_id');
+            $table->date('betaald_op');
 
             $table->timestamps();
 

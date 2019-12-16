@@ -15,24 +15,28 @@ class UsersTableSeeder extends Seeder
            [
                'email' => 'admin@barroc.nl',
                'name'  => 'Admin Medewerker',
+               'bkr'   => '1',
                'password' => Hash::make('barroc123'),
                'role_id'    => 1
            ],
            [
                'email' => 'inkoop@barroc.nl',
                'name'  =>  'Inkoop Medewerker',
+               'bkr'   => '1',
                'password' => Hash::make('barroc123'),
                'role_id'    => 6
            ],
            [
                'email'  => 'sales@barroc.nl',
                'name'   => 'Sales Medewerker',
+               'bkr'   => '1',
                'password' => Hash::make('barroc123'),
                'role_id'  => 2
            ],
            [
                'email'  => 'info@mediamarkt.nl',
                'name'   => 'Mediamarkt',
+               'bkr'   => '1',
                'password' => Hash::make('mediamarkt123'),
                'role_id'  => 7
            ]

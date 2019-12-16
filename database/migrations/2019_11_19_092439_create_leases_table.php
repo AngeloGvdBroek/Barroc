@@ -18,6 +18,7 @@ class CreateLeasesTable extends Migration
             $table->unsignedBigInteger('lease_type_id');
             $table->unsignedBigInteger('customer_id');
             $table->unsignedBigInteger('finance_id');
+            $table->decimal('monthly_costs');
 
             $table->timestamps();
 

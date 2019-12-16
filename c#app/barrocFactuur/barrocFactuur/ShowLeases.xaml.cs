@@ -42,7 +42,7 @@ namespace barrocFactuur
 
             MySqlConnection connection = new MySqlConnection(connectionstring);
 
-            MySqlCommand cmd = new MySqlCommand("select users.name, invoices.betaald_op, leases.monthly_costs, lease_types.`type` from users join leases on leases.customer_id = users.id join invoices on invoices.lease_id = leases.id join lease_types on leases.lease_type_id = lease_types.id", connection);
+            MySqlCommand cmd = new MySqlCommand("select users.name, leases.monthly_costs, lease_types.`type` from users join leases on leases.customer_id = users.id join invoices on invoices.lease_id = leases.id join lease_types on leases.lease_type_id = lease_types.id", connection);
             connection.Open();
             DataTable dt = new DataTable();
             dt.Load(cmd.ExecuteReader());

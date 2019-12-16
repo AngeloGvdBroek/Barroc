@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCompanydetailsTable extends Migration
+class CreateWorkordersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,12 @@ class CreateCompanydetailsTable extends Migration
      */
     public function up()
     {
-        Schema::create('companydetails', function (Blueprint $table) {
+        Schema::create('workorders', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
-            $table->text('address');
-            $table->text('city');
-            $table->text('postcode');
-            $table->text('telefoonnummer');
-            $table->text('email');
+            $table->text('work_address');
+            $table->text('description');
+            $table->bigInteger('total_price');
             $table->timestamps();
 
             $table->foreign('user_id')
@@ -36,6 +34,6 @@ class CreateCompanydetailsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('companydetails');
+        Schema::dropIfExists('workorders');
     }
 }
