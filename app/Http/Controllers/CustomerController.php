@@ -38,10 +38,12 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
+
         $this->validate($request, [
             'companyName' => 'required',
             'email' => 'required',
-            'password' => 'required'
+            'password' => 'required',
+            'bkr' => 'boolean',
         ]);
 
         // Insert new user in database
@@ -50,6 +52,7 @@ class CustomerController extends Controller
         $user->name = $request->companyName;
         $user->email = $request->email;
         $user->password = password_hash($request->password, PASSWORD_DEFAULT);
+        $user->bkr = $request->has('bkr');
         $user->save();
 
         // Insert new customer in database
@@ -93,10 +96,12 @@ class CustomerController extends Controller
      */
     public function update(Request $request, Customer $customer)
     {
+
         $this->validate($request, [
             'companyName' => 'required',
             'email' => 'required',
-            'password' => 'required'
+            'password' => 'required',
+            'bkr' => 'boolean',
         ]);
 
         // Insert new user in database
@@ -104,6 +109,7 @@ class CustomerController extends Controller
         $user->name = $request->companyName;
         $user->email = $request->email;
         $user->password = $request->password;
+        $user->bkr = $request->bkr;
         $user->save();
 
         $id = $customer->id;

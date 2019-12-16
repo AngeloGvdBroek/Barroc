@@ -90,7 +90,7 @@
             </ul>
         </div>
         <div class="Contact-details-logo">
-            <a href=""><img src="{{ asset('img/logo.png') }}" alt="test"></a>
+            <a href="/"><img src="{{ asset('img/logo.png') }}" alt="test"></a>
         </div>
         <div class="Contact-details-times">
             <ul>

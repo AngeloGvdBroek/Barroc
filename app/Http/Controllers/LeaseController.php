@@ -1,13 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\productorder;
+use App\Lease;
 use Auth;
 use Illuminate\Http\Request;
 use test\Mockery\ReturnTypeObjectTypeHint;
 
 
-class orderController extends Controller
+class LeaseController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +16,8 @@ class orderController extends Controller
      */
     public function index()
     {
-        $productorders = \App\productorder::all();
-        return view('productsOrder/create', ['productorders' => $productorders] );
+        $lease = \App\lease::all();
+        return view('lease/create', ['lease' => $lease] );
     }
 
     /**
@@ -30,7 +30,7 @@ class orderController extends Controller
 
         $products = \App\Supply::where('id', '<', '5')->get();
 
-        return view('productsOrder/create', array('products' => $products));
+        return view('lease/create', array('products' => $products));
     }
 
     /**
@@ -45,46 +45,43 @@ class orderController extends Controller
 
         $this->middleware('auth');
         $user_id = Auth::user()->id;
-        $order_id =
 
         $this->validate($request, [
-            'order_id'      =>'max:250',
             'supplies_id'         => 'max:250',
             'amount'         => 'max:250',
 
         ]);
 
 
-if ($request->product1 != null)
-    {
-
-        productorder::insert([
-            'order_id' => $order_id,
-            'supplies_id'          => $request->product1,
-            'amount'          => $request->amount1,
-
-            'user_id' => $user_id
-        ]);
-}
-
-if ($request->product2 != null)
+        if ($request->product1 != null)
         {
 
             productorder::insert([
-                'order_id' =>$request->order_id,
+
+                'supplies_id'          => $request->product1,
+                'amount'          => $request->amount1,
+
+                'user_id' => $user_id
+            ]);
+        }
+
+        if ($request->product2 != null)
+        {
+
+            productorder::insert([
+
                 'supplies_id'          => $request->product2,
                 'amount'          => $request->amount2,
 
                 'user_id' => $user_id
             ]);
-
         }
 
-if ($request->product3 != null)
+        if ($request->product3 != null)
         {
 
             productorder::insert([
-                'order_id' =>$request->order_id,
+
                 'supplies_id'          => $request->product3,
                 'amount'          => $request->amount3,
 
@@ -92,11 +89,11 @@ if ($request->product3 != null)
             ]);
         }
 
-if ($request->product4 != null)
+        if ($request->product4 != null)
         {
 
             productorder::insert([
-                'order_id' =>$request->order_id,
+
                 'supplies_id'          => $request->product4,
                 'amount'          => $request->amount4,
 

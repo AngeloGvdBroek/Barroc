@@ -28,9 +28,15 @@
 		</div>
 
 		<div class="form-group">
+			<label for="bkr">BKR</label>
+
+			<input type="checkbox" name="bkr" class="switch-input" value="1" {{ old('bkr') ? 'checked="checked"' : '' }} @if($user->bkr == 1) checked=checked @endif
+			>
+
+		</div>
+		<div class="form-group">
             <input class="btn btn-primary" type="submit" value="Gegevens opslaan">
         </div>
-
 	</form>
 
 	<a href="{{ route('customers.index') }}" class="btn btn-primary">Naar alle klanten</a>
