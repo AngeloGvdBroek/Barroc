@@ -1,0 +1,15 @@
+<Window x:Class="barrocFactuur.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:barrocFactuur"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Button x:Name="Invoicecreate" Content="factuur aanmaken" HorizontalAlignment="Left" Margin="100,150,0,0" VerticalAlignment="Top" Width="200" Height="150" FontSize="20" Click="Invoicecreate_Click"/>
+        <Button x:Name="Incoicesee" Content="factuur inzien" HorizontalAlignment="Left" Margin="500,150,0,0" VerticalAlignment="Top" Width="200" Height="150" FontSize="20" Click="Incoicesee_Click"/>
+
+
+    </Grid>
+</Window>
