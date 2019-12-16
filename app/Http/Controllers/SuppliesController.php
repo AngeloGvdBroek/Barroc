@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Category;
-use \App\supply;
+use \App\Supply;
 use Illuminate\Http\Request;
 
 class suppliesController extends Controller
@@ -19,7 +19,7 @@ class suppliesController extends Controller
      */
     public function index()
     {
-        $supplies = supply::paginate(15);
+        $supplies = Supply::paginate(15);
         return view('supply/index', ['supplies' => $supplies]);
     }
 
@@ -138,29 +138,30 @@ class suppliesController extends Controller
 
         $btn = $_POST['submitbtn'];
         if($btn == "clear"){
-            $supply = supply::all();
+            $supply = Supply::all();
             return view('supply.index', [ '$supply' => $supply]);
         }
 
         $name = $request->input('name');
-        $supply = supply::where('name')
+        $supplies = Supply::where('name')
             ->orWhere( 'name',  'like',  '%' . $name . '%' )->paginate();
 
         $checkbox_stock = $request->input('enough', false);
         if($checkbox_stock == 'to-little'){
 
-            $supply = supply::where('in_stock')
+            $supplies = Supply::where('in_stock')
                 ->orWhere('in_stock' , '<', 3)->paginate();
 
         }
 
         if($checkbox_stock == 'enough'){
-            $supply = supply::where('in_stock')
+            $supplies = Supply::where('in_stock')
                 ->orWhere('in_stock', '>', 3)->paginate();
         }
 
-        return view('supply.index', ['supply' => $supply]);
+        return view('supply.index', ['supplies' => $supplies]);
     }
+
     public function update(Request $request, $id)
     {
 
