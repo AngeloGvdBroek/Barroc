@@ -26,7 +26,7 @@ class CreateProductordersTable extends Migration
 
             $table->foreign('supplies_id')
                 ->references('id')
-                ->on('supply');
+                ->on('supplies');
         });
     }
 
