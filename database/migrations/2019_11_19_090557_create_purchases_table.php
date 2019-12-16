@@ -16,7 +16,7 @@ class CreatePurchasesTable extends Migration
         Schema::create('purchases', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('quotation_id');
-            $table->decimal('total_prices');
+            $table->decimal('total_price');
 
             $table->timestamps();
 
