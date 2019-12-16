@@ -71,7 +71,7 @@ namespace barrocFactuur
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            string insertQuery = "INSERT INTO INVOICES(lease_id,created_at,updated_at) VALUES('"+lease_id.Text+"','"+ aDate.ToString("yyyy-MM-dd") + "','"+ aDate.ToString("yyyy-MM-dd HH:mm:ss") + "','"+ aDate.ToString("yyyy - MM - dd HH: mm:ss") + "' )";
+            string insertQuery = "INSERT INTO INVOICES(lease_id,betaald_op,created_at,updated_at) VALUES('"+lease_id.Text+"','"+ aDate.ToString("yyyy-MM-dd") + "','"+ aDate.ToString("yyyy-MM-dd HH:mm:ss") + "','"+ aDate.ToString("yyyy - MM - dd HH: mm:ss") + "' )";
             executeQuery(insertQuery);
         }
     }
