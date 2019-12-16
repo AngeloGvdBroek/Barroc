@@ -3,9 +3,15 @@
 @section('content')
 
 <div class="container">
-	<h1>Welkom op de Finance pagina</h1>
+	<div class="card">
+		<div class="card-header">
+			<h1>Welkom op de Finance pagina</h1>
+		</div>
 
-    <a href="{{ route('invoices.index') }}"><p>Factuur beheer pagina</p></a>
+		<div class="card-body">
+			<a href="{{ route('invoices.index') }}"><p>Factuur beheer pagina</p></a>	
+		</div>
+	</div>
 </div>
 
 @endsection
