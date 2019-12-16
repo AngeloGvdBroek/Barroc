@@ -1,4 +1,4 @@
-@extends('layouts/app')
+@extends('layouts.app')
 
 @section('content')
 
@@ -14,8 +14,6 @@
 			<li>{{ $supply->name }} | {{ $supply->pivot->amount }}x</li>
 		@endforeach 
 	</ul>
-		
-	<a href="{{ route('quotes.index') }}" class="btn btn-primary">Naar alle offertes</a> 
 
 </div>
 

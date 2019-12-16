@@ -117,14 +117,11 @@ class QuotationController extends Controller
      */
     public function show(Quotation $quote)
     {
-
         $customer = \App\User::find($quote->customer_id);
         $user = \App\User::find($quote->sales_id);
 
-        $quote = \App\Quotation::where('id', $quote->id)->with('purchase', 'purchase.supplies')->get();
+        $quote = \App\Quotation::where('id', $quote->id)->with('purchase', 'purchase.supplies')->first();
 
-
-        return $quote['id'];
         return view('sales/quotes/show', ['quote' => $quote, 'user' => $user, 'customer'=> $customer] );
     }
 

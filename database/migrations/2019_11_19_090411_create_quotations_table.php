@@ -17,6 +17,8 @@ class CreateQuotationsTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('sales_id');
             $table->unsignedBigInteger('customer_id');
+            $table->tinyInteger('finance_approved')->nullable();
+            $table->tinyInteger('customer_approved')->nullable();
             
             $table->timestamps();
 

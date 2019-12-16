@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Supply extends Model
 {
-    public function supply()
+    public function lease()
     {
-        return $this->belongsTo('\App\Purchase_Rule', 'id', 'supply_id');
+    	return $this->hasMany('\App\Lease', 'lease_id', 'id');
     }
 }

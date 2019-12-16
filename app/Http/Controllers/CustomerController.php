@@ -4,10 +4,47 @@ namespace App\Http\Controllers;
 
 use App\Customer;
 use App\User;
+use App\Quotation;
 use Illuminate\Http\Request;
 
 class CustomerController extends Controller
 {
+    public function dashboard() 
+    {
+        return view('customer.index');
+    }
+
+    public function quotes()
+    {
+        $quotes = \App\Quotation::where('customer_id', \Auth::id())->paginate(15);
+
+        return view('customer.quotes.index', ['quotes' => $quotes]);
+    }
+
+        public function quotesShow($id)
+        {
+            $quote = \App\Quotation::where('id', $id)->with('purchase', 'purchase.supplies')->first();
+
+            $customer = \App\User::find($quote->customer_id);
+            $user = \App\User::find($quote->sales_id);
+
+            return view('customer/quotes/show', ['quote' => $quote, 'user' => $user, 'customer'=> $customer] );
+        }
+
+    public function leases()
+    {
+        $leases = \App\Lease::where('customer_id', \Auth::id())->paginate(15);
+
+        return view('customer.leases.index', ['leases' => $leases]);
+    }
+
+        public function leasesShow($id)
+        {
+            $lease = \App\Lease::where('id', $id)->with('supplies', 'user', 'finance')->first();
+
+            return view('customer/leases/show', ['lease' => $lease] );
+        }    
+
     /**
      * Display a listing of the resource.
      *
@@ -84,7 +121,7 @@ class CustomerController extends Controller
      */
     public function edit(Customer $customer)
     {
-        //
+        return view('customer.edit', ['customer' => $customer]);
     }
 
     /**

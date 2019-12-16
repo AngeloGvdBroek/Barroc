@@ -15,8 +15,13 @@ class Quotation extends Model
         return $this->belongsTo('\App\Purchase', 'id', 'quotation_id');
     }
 
-    public function customer()
+    public function user()
     {
-    	return $this->hasMany('\App\User','id','user_id');
+    	return $this->hasOne('\App\User', 'id', 'customer_id');
+    }
+
+    public function sale() 
+    {
+        return $this->hasOne('\App\User', 'id', 'sales_id');
     }
 }

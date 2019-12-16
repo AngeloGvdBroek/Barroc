@@ -8,7 +8,7 @@ class FinanceController extends Controller
 {
     public function dashboard() 
     {
-    	$quotes = \App\Quote::all();
+    	$quotes = \App\Quotation::all();
 
         return view('finance/index', ['quotes' => $quotes]);
     }

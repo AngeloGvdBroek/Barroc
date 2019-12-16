@@ -8,7 +8,7 @@ class Purchase extends Model
 {
     public function supplies()
     {
-        return $this->belongsToMany('\App\Supply', 'purchase_rules');
+        return $this->belongsToMany('\App\Supply', 'purchase_rules')->withPivot('amount');
     }
 
     public function quotation(){

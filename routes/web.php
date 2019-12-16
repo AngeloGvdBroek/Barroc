@@ -28,7 +28,7 @@ Route::resource('supply', 'SuppliesController');
 //Route::resource('categories', 'categoriesController');
 //Route::resource('categories.show', 'categoriesController');
 
-route::post('products.filter', 'productsController@filter')->name('productsController.filter');
+//route::post('products.filter', 'productsController@filter')->name('productsController.filter');
 
 //Route::resource('products', 'productsController');
 Route::get('/home', 'HomeController@index')->name('home');
@@ -49,6 +49,13 @@ Route::get('/sendemail', 'ContactformulierController@sendmail');
 Route::post('/sendemail/send', 'ContactformulierController@send');
 
 Route::get('/sales', 'SalesController@dashboard')->name('sales')->middleware('auth', 'role:2');
+
+/* CUSTOMER ROUTES */
+Route::get('/customer', 'CustomerController@dashboard')->name('customer')->middleware('auth', 'role:7');
+Route::get('/customer/quotes', 'CustomerController@quotes')->name('customer.quotes')->middleware('auth', 'role:7');
+Route::get('/customer/quotes/{id}', 'CustomerController@quotesShow')->name('customer.quotesShow')->middleware('auth', 'role:7');
+Route::get('/customer/leases', 'CustomerController@leases')->name('customer.leases')->middleware('auth', 'role:7');
+Route::get('/customer/leases/{id}', 'CustomerController@leasesShow')->name('customer.leasesShow')->middleware('auth', 'role:7');
 
 
 Route::get('/finance', 'FinanceController@dashboard')->name('finance')->middleware('auth', 'role:3');

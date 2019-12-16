@@ -13,7 +13,7 @@ class InvoiceController extends Controller
      */
     public function index()
     {
-        $quotes = \App\Quote::paginate(15);
+        $quotes = \App\Quotation::with('user')->paginate(15);
 
         return view('finance.invoices.index', ['quotes' => $quotes]);
     }
@@ -47,7 +47,9 @@ class InvoiceController extends Controller
      */
     public function show($id)
     {
-        //
+        $quote = \App\Quotation::where('id', $id)->with('purchase', 'purchase.supplies')->first();
+        //return $quote;
+        return view('finance/invoices/show', ['quote' => $quote]);
     }
 
     /**
@@ -58,7 +60,7 @@ class InvoiceController extends Controller
      */
     public function edit($id)
     {
-        //
+        //  
     }
 
     /**
@@ -70,7 +72,18 @@ class InvoiceController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //return $request;
+
+        if ( isset($request->financeApproved) ) {
+
+            $quote = \App\Quotation::find($id);
+
+            $quote->finance_approved = 1;
+
+            $quote->save();
+        }
+
+        return redirect()->route('invoices.show', $id);
     }
 
     /**
