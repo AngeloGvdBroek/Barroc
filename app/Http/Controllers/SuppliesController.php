@@ -19,9 +19,8 @@ class suppliesController extends Controller
      */
     public function index()
     {
-
         $supplies = supply::paginate(15);
-        return view('supply/index', ['supply' => $supplies]);
+        return view('supply/index', ['supplies' => $supplies]);
     }
 
     /**

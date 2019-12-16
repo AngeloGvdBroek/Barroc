@@ -68,6 +68,6 @@ Route::get('/test', function() {
 	dd($user->role_id);
 });
 
-Route::resource('quotes', 'QuotationController')->middleware('auth', 'role:2', 'role:7');
-Route::resource('customers', 'CustomerController');
-Route::resource('invoices', 'InvoiceController');
+Route::resource('sales/quotes', 'QuotationController')->middleware('auth', 'role:2', 'role:7');
+Route::resource('sales/customers', 'CustomerController');
+Route::resource('finance/invoices', 'InvoiceController');
