@@ -16,8 +16,8 @@ class orderController extends Controller
      */
     public function index()
     {
-        $productorders = \App\productorder::all();
-        return view('productsOrder/create', ['productorders' => $productorders] );
+        $products = \App\Supply::all();
+        return view('productsOrder/create', ['products' => $products] );
     }
 
     /**
@@ -30,7 +30,7 @@ class orderController extends Controller
 
         $products = \App\Supply::where('id', '<', '5')->get();
 
-        return view('productsOrder/create', array('products' => $products));
+        return view('productsOrder/create', ['products' => $products]);
     }
 
     /**

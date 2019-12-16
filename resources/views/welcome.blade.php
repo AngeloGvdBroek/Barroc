@@ -14,10 +14,9 @@
     </head>
 
     <header>
-{{--        <a href="{{ route('faults.index') }}">TEST</a>--}}
         <div class="flex-center position-ref full-height">
 
-{{--            @auth (Route::has('login'))--}}
+                {{--@auth (Route::has('login'))--}}
 
                 <div class="top-left links">
                     <a href=""><img src="{{ asset('img/logo.png') }}" alt="test"></a>
@@ -25,64 +24,62 @@
                     <a href="{{ url('faults') }}" style="vertical-align: top">storingen</a>
                     <a href="{{ url('faults/create') }}" style="vertical-align: top">storing aanmaken</a>
                     <a href="{{ url('workorders/create') }}" style="vertical-align: top">werkbon aanmaken</a>
-                    <a href="{{ url('customers') }}" style="vertical-align: top">Customers</a>
+                    <a href="{{ route('customers.index') }}" style="vertical-align: top">Klanten</a>
                 </div>
 
                 <div class="top-right links">
-                    @auth
+                    {{--@auth--}}
                         <a href="{{ url('/home') }}">Home</a>
-                    @else
+                    {{--@else--}}
                         <a href="{{ route('login') }}">Login</a>
 
 
-                    @endauth
+                    {{--@endauth--}}
                 </div>
-{{--        @endif--}}
+            {{--@endif--}}
 
         </div>
 
     </header>
-    <body>
 
-            <div class="content">
-                <div class="content1" style="background-image: url({{"img/coffeewallpaper.jpg"}});">
+    <body>
+        <div class="content">
+            <div class="content1" style="background-image: url({{"img/coffeewallpaper.jpg"}});">
                 <div class="title m-b-md">
                     Barroc
                 </div>
-                    <div class="content2">
-                        <div class="title m-b-md">
-                            INTENSE
-                        </div>
 
-                </div>
-            </div>
-                <div class="content3">
-                    <div class="images1">
-                      <img class="imagetest1" src="{{ asset('img/coffee1.jpg') }}" alt="test" width="500px">
-                        <img class="imagetest2" src="{{ asset('img/coffee2.jpg') }}" alt="test1" width="500px">
-                        <img class="imagetest3" src="{{ asset('img/coffee3.jpg') }}" alt="test2" width="500px" height="500">
-
-                    </div>
-                </div>
-
-            </div>
-            <div class="content">
-                <div class="content4" style="background-image: url({{"img/coffeewallpaper2.jpg"}});">
+                <div class="content2">
                     <div class="title m-b-md">
-
-                        INTENSE COFFIE
+                        INTENSE
                     </div>
-                    <div class="content5">
-                        <div class="title m-b-md">
-                            BARROC INTENSE
-                        </div>
+                </div>
+            </div>
 
+            <div class="content3">
+                <div class="images1">
+                    <img class="imagetest1" src="{{ asset('img/coffee1.jpg') }}" alt="test" width="500px">
+                    <img class="imagetest2" src="{{ asset('img/coffee2.jpg') }}" alt="test1" width="500px">
+                    <img class="imagetest3" src="{{ asset('img/coffee3.jpg') }}" alt="test2" width="500px" height="500">
+                </div>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="content4" style="background-image: url({{"img/coffeewallpaper2.jpg"}});">
+                <div class="title m-b-md">
+                    INTENSE COFFIE
+                </div>
+
+                <div class="content5">
+                    <div class="title m-b-md">
+                        BARROC INTENSE
                     </div>
-
-
-
+                </div>
+            </div>
         </div>
     </body>
+
 <footer>
 <div class="adress-footer">
     <ul>

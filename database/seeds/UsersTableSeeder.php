@@ -32,14 +32,12 @@ class UsersTableSeeder extends Seeder
                'bkr'   => '1',
                'password' => Hash::make('barroc123'),
                'role_id'  => 2
-           ],
-           [
-               'email'  => 'info@mediamarkt.nl',
-               'name'   => 'Mediamarkt',
-               'bkr'   => '1',
-               'password' => Hash::make('mediamarkt123'),
-               'role_id'  => 7
            ]
         ]);
+
+        /*$users = factory(\App\User::class, 150);
+        $users = factory(\App\User::class, 40)->make([
+          'bkr' => 
+        ]);*/
     }
 }
