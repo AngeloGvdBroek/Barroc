@@ -5,10 +5,38 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:barrocFactuur"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="factuur" Height="450" Width="800"
+        WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
     <Grid>
-        <Button x:Name="Invoicecreate" Content="factuur aanmaken" HorizontalAlignment="Left" Margin="100,150,0,0" VerticalAlignment="Top" Width="200" Height="150" FontSize="20" Click="Invoicecreate_Click"/>
-        <Button x:Name="Incoicesee" Content="factuur inzien" HorizontalAlignment="Left" Margin="500,150,0,0" VerticalAlignment="Top" Width="200" Height="150" FontSize="20" Click="Incoicesee_Click"/>
+        <Button x:Name="Invoicecreate" Content="factuur&#xa;aanmaken" HorizontalAlignment="Left" Margin="126,176,0,0" VerticalAlignment="Top" Width="150" Height="100" FontSize="20" Click="Invoicecreate_Click" Panel.ZIndex="1" Background="Gold"/>
+        <Button x:Name="Incoicesee" Content="factuur&#xa;inzien" Margin="525,176,0,0" VerticalAlignment="Top" Height="100" FontSize="20" Click="Incoicesee_Click" HorizontalAlignment="Left" Width="150" Panel.ZIndex="1" Background="Gold"/>
+        <Rectangle Fill="Gold" HorizontalAlignment="Left" Height="200" VerticalAlignment="Top" Width="200" Margin="-105,-96,0,0" RenderTransformOrigin="0.5,0.5" Panel.ZIndex="1" >
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="133.058"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Rectangle Fill="Gold" HorizontalAlignment="Left" Height="200" VerticalAlignment="Top" Width="200" Margin="690,-102,-96.4,0" RenderTransformOrigin="0.5,0.5" Panel.ZIndex="1">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="133.058"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Rectangle Fill="#FF212121" HorizontalAlignment="Left" Height="27" Margin="0,393,-0.4,0" VerticalAlignment="Top" Width="794"/>
+        <Rectangle Fill="#FF212121" HorizontalAlignment="Left" Height="323" Margin="0,97,0,0" VerticalAlignment="Top" Width="27"/>
+        <Rectangle Fill="#FF212121" HorizontalAlignment="Left" Height="323" Margin="767,87,-0.4,0"  VerticalAlignment="Top" Width="27"/>
+        <Rectangle Fill="#FF212121" HorizontalAlignment="Left" Height="27" Margin="0,0,-0.4,0" VerticalAlignment="Top" Width="794"/>
+        <Image HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Margin="27,27,0,0" Panel.ZIndex="2" Source="resource\Logo5_groot.png"/>
+        <Rectangle Fill="#FF333333" HorizontalAlignment="Left" Height="150" Margin="105,151,0,0" VerticalAlignment="Top" Width="200"/>
+        <Rectangle Fill="#FF333333" HorizontalAlignment="Left" Height="150" Margin="500,151,0,0" VerticalAlignment="Top" Width="200"/>
 
 
     </Grid>

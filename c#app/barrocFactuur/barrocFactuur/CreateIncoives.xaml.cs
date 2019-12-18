@@ -52,11 +52,11 @@ namespace barrocFactuur
                 command = new MySqlCommand(query, connection);
                 if(command.ExecuteNonQuery() == 1)
                 {
-                    MessageBox.Show("query executed");
+                    MessageBox.Show("factuur gemaakt");
                 }
                 else
                 {
-                    MessageBox.Show("query not exccuted");
+                    MessageBox.Show("oeps! &#xa; er is iets mis gegaan");
                 }
             }
             catch (Exception ex)
@@ -73,6 +73,13 @@ namespace barrocFactuur
         {
             string insertQuery = "INSERT INTO INVOICES(lease_id,betaald_op,created_at,updated_at) VALUES('"+lease_id.Text+"','"+ aDate.ToString("yyyy-MM-dd") + "','"+ aDate.ToString("yyyy-MM-dd HH:mm:ss") + "','"+ aDate.ToString("yyyy - MM - dd HH: mm:ss") + "' )";
             executeQuery(insertQuery);
+        }
+
+        private void BackToBase_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow win1 = new MainWindow();
+            win1.Show();
+            this.Close();
         }
     }
 }

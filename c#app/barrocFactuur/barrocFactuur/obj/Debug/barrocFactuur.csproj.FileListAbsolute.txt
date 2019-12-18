@@ -22,3 +22,4 @@ C:\xampp\htdocs\barroc\Barroc\c#app\barrocFactuur\barrocFactuur\obj\Debug\Create
 C:\xampp\htdocs\barroc\Barroc\c#app\barrocFactuur\barrocFactuur\obj\Debug\ShowLeases.g.cs
 C:\xampp\htdocs\barroc\Barroc\c#app\barrocFactuur\barrocFactuur\obj\Debug\ShowLeases.baml
 C:\xampp\htdocs\barroc\Barroc\c#app\barrocFactuur\barrocFactuur\obj\Debug\barrocFactuur.csprojAssemblyReference.cache
+C:\xampp\htdocs\barroc\Barroc\c#app\barrocFactuur\barrocFactuur\obj\Debug\barrocFactuur.csproj.CoreCompileInputs.cache

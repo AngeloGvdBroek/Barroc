@@ -5,8 +5,36 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:barrocFactuur"
         mc:Ignorable="d"
-        Title="ShowLeases" Height="450" Width="800">
-    <Grid>
-        <DataGrid x:Name="invcoicesList" Margin="10,10,0,0" Loaded="invcoicesList_Loaded"  ItemsSource="{Binding}" ColumnWidth="*" HorizontalAlignment="Left" Width="774" Height="400" VerticalAlignment="Top"/>
+        Title="ShowLeases" Height="450" Width="800"
+        WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
+
+    <Grid HorizontalAlignment="Left" VerticalAlignment="Top">
+        <DataGrid x:Name="invcoicesList" AlternatingRowBackground="Gold" Margin="0,0,69.6,27" Loaded="invcoicesList_Loaded"  ItemsSource="{Binding}" ColumnWidth="*" Height="330" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="651" Background="#FF212121"/>
+        <Rectangle Fill="Gold" Height="200" VerticalAlignment="Bottom" Margin="-105,-96,698.6,316" RenderTransformOrigin="0.5,0.5" Panel.ZIndex="1" >
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="133.058"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Rectangle Fill="Gold" HorizontalAlignment="Right" Height="200" VerticalAlignment="Bottom" Width="200" Margin="0,-102,-96.4,322" RenderTransformOrigin="0.5,0.5" Panel.ZIndex="1">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="133.058"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Rectangle Fill="#FF212121" Height="27" Margin="0,393,-0.4,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="794"/>
+        <Rectangle Fill="#FF212121" HorizontalAlignment="Left" Height="333" Margin="0,87,0,0" VerticalAlignment="Top" Width="27"/>
+        <Rectangle Fill="#FF212121" Margin="767,75,-0.4,0" HorizontalAlignment="Left" Width="27"/>
+        <Rectangle Fill="#FF212121" HorizontalAlignment="Left" Height="27" Margin="0,0,-0.4,0" VerticalAlignment="Top" Width="794"/>
+        <Button x:Name="backToBase" Content="terug" HorizontalAlignment="Left" Margin="126,30,0,0" VerticalAlignment="Top" Width="85" Height="19" Panel.ZIndex="1" Background="Gold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="BackToBase_Click"/>
+        <Rectangle Fill="#FF333333" HorizontalAlignment="Left" Height="30" Margin="111,25,0,0" VerticalAlignment="Top" Width="115"/>
     </Grid>
 </Window>

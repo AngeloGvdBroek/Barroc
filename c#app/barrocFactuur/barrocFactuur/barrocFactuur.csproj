@@ -113,5 +113,23 @@
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Logo5_groot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resource\Logo1_groot.png" />
+    <Resource Include="resource\Logo1_klein.png" />
+    <Resource Include="resource\Logo2_groot.png" />
+    <Resource Include="resource\Logo2_klein.png" />
+    <Resource Include="resource\Logo3_groot.png" />
+    <Resource Include="resource\Logo3_klein.png" />
+    <Resource Include="resource\Logo4_groot.png" />
+    <Resource Include="resource\Logo4_klein.png" />
+    <Resource Include="resource\Logo5_groot.png" />
+    <Resource Include="resource\Logo5_klein.png" />
+    <Resource Include="resource\Logo6_groot.png" />
+    <Resource Include="resource\Logo6_klein.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

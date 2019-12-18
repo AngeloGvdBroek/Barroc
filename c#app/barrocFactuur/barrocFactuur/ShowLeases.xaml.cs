@@ -50,5 +50,12 @@ namespace barrocFactuur
 
             invcoicesList.DataContext = dt;
         }
+
+        private void BackToBase_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow win1 = new MainWindow();
+            win1.Show();
+            this.Close();
+        }
     }
 }

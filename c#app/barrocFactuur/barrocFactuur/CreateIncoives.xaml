@@ -5,10 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:barrocFactuur"
         mc:Ignorable="d"
-        Title="CreateIncoives" Height="262.8" Width="246.4">
+        Title="CreateIncoives" Height="262.8" Width="246.4"
+        WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
     <Grid>
-        <TextBox x:Name="lease_id" HorizontalAlignment="Left" Height="23" Margin="78,49,0,0" TextWrapping="Wrap" Text=""   VerticalAlignment="Top" Width="120"/>
-        <Label Content="lease id" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="23,45,0,0"/>
-        <Button Content="maak factuur aan" HorizontalAlignment="Left" Margin="78,101,0,0" VerticalAlignment="Top" Width="120" Click="Button_Click"/>
+        <TextBox x:Name="lease_id" HorizontalAlignment="Left" Height="23" Margin="105,49,0,0" TextWrapping="Wrap" Text=""   VerticalAlignment="Top" Width="120"/>
+        <Label Content="lease nummer" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,49,0,0"/>
+        <Button x:Name="backToBase" Content="terug" HorizontalAlignment="Left" Margin="78,170,0,0" VerticalAlignment="Top" Width="85" Height="26" Panel.ZIndex="1" Background="Gold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="BackToBase_Click"/>
+        <Rectangle Fill="#FF333333" HorizontalAlignment="Left" Height="40" Margin="63,163,0,0" VerticalAlignment="Top" Width="115"/>
+        <Button x:Name="submit" Content="submit" HorizontalAlignment="Left" Margin="78,100,0,0" VerticalAlignment="Top" Width="85" Height="26" Panel.ZIndex="1" Background="Gold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="Button_Click"/>
+        <Rectangle Fill="#FF333333" HorizontalAlignment="Left" Height="40" Margin="63,93,0,0" VerticalAlignment="Top" Width="115"/>
+        <Rectangle Fill="#FF212121" Height="9" Margin="0,224,-554,-0.2" VerticalAlignment="Top" HorizontalAlignment="Right" Width="794"/>
+        <Rectangle Fill="#FF212121" HorizontalAlignment="Left" Height="333" Margin="0,16,0,-116.2" VerticalAlignment="Top" Width="5"/>
+        <Rectangle Fill="#FF212121" Margin="226,0,-7,-117.2" RenderTransformOrigin="0.5,0.5" Height="345" VerticalAlignment="Bottom">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Rectangle Fill="#FF212121" HorizontalAlignment="Left" Height="16" Margin="0,0,-554,0" VerticalAlignment="Top" Width="794"/>
     </Grid>
 </Window>
